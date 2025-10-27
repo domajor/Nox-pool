@@ -154,8 +154,8 @@ sudo su - your-user
 Clone the repository and run `npm update` for all the dependencies to be installed:
 
 ```bash
-git clone https://github.com/dvandal/cryptonote-nodejs-pool.git pool
-cd pool
+git clone https://github.com/ddomajor/Nox-pool.git Nox-pool
+cd Nox-pool
 
 npm update
 ```

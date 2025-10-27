@@ -1,44 +1,44 @@
 {
     "poolHost": "your.pool.host",
 	
-    "coin": "Pine Tree Shilling 1652",
-    "symbol": "P1652",
-    "coinUnits": 1000000,
-    "coinDecimalPlaces": 6,
-    "coinDifficultyTarget": 30,
-    "blockchainExplorer": "https://explorer.74.208.182.138/block.html?hash={id}",
-    "transactionExplorer": "https://explorer.74.208.182.138/transaction.html?hash={id}",
+	"coin": "noxcoin",
+	"symbol": "NOX",
+	"coinUnits": 1000000000000,
+	"coinDecimalPlaces": 4,
+	"coinDifficultyTarget": 120,
+        "blockchainExplorer": "https://explorer.noxcoin.online/block/{id}",
+        "transactionExplorer": "https://explorer.noxcoin.online/tx/{id}",
+	"daemonType": "default",
+	"cnAlgorithm": "randomx",
+	"cnVariant": 0,
+	"cnBlobType": 14,
+	"includeHeight": true,
+	"isRandomX": true,
 
-    "daemonType": "bytecoin",
-    "cnAlgorithm": "cryptonight_light",
-    "cnVariant": 1,
-    "cnBlobType": 2,
-
-    "logging": {
-        "files": {
-            "level": "info",
-            "directory": "logs",
-            "flushInterval": 5
-        },
-        "console": {
-            "level": "info",
-            "colors": true
-        }
-    },
-    "hashingUtil": true,
-    "childPools": null,
-    "poolServer": {
-        "enabled": true,
-	"mergedMining": false,
-        "clusterForks": "auto",
-        "poolAddress": "** Your pool wallet address **",
-        "intAddressPrefix": null,
-        "blockRefreshInterval": 600,
-        "minerTimeout": 600,
-        "sslCert": "./cert.pem",
-        "sslKey": "./privkey.pem",
-        "sslCA": "./chain.pem",
-        "ports": [
+	"logging": {
+		"files": {
+			"level": "info",
+			"directory": "logs",
+			"flushInterval": 5
+		},
+		"console": {
+			"level": "info",
+			"colors": true
+		}
+	},
+	"childPools": null,
+	"poolServer": {
+		"enabled": true,
+		"mergedMining": false,
+		"clusterForks": "auto",
+		"poolAddress": " *Pool-Wallet* ",
+                "intAddressPrefix": 116,
+		"blockRefreshInterval": 1000,
+		"minerTimeout": 900,
+		"sslCert": "./cert.pem",
+		"sslKey": "./privkey.pem",
+		"sslCA": "./chain.pem",
+		"ports": [
             {
                 "port": 3333,
                 "difficulty": 500,
@@ -72,65 +72,68 @@
                 "ssl": true
             }
         ],
-        "varDiff": {
-            "minDiff": 5000,
-            "maxDiff": 100000000,
-            "targetTime": 30,
-            "retargetTime": 30,
-            "variancePercent": 30,
-            "maxJump": 100
-        },
-        "paymentId": {
-            "addressSeparator": "+"
-        },
-	"separators": [{"value":"+","desc":"plus"}, {"value":".","desc":"dot"}],
-        "fixedDiff": {
-            "enabled": true,
-            "addressSeparator": "."
-        },
-        "shareTrust": {
-            "enabled": true,
-            "min": 10,
-            "stepDown": 3,
-            "threshold": 10,
-            "penalty": 30
-        },
-        "banning": {
-            "enabled": false,
-            "time": 120,
-            "invalidPercent": 80,
-            "checkThreshold": 30
-        },
-        "slushMining": {
-            "enabled": false,
-            "weight": 300,
-            "blockTime": 60,
-            "lastBlockCheckRate": 1
+		"varDiff": {
+			"minDiff": 5000,
+			"maxDiff": 1000001,
+			"targetTime": 120,
+			"retargetTime": 60,
+			"variancePercent": 30,
+			"maxJump": 100
+		},
+		"paymentId": {
+			"addressSeparator": ".",
+			"validation": false,
+			"validations": ["1,16", "64"],
+			"ban": true
+		},
+		"fixedDiff": {
+			"enabled": true,
+			"addressSeparator": "."
+		},
+		"shareTrust": {
+			"enabled": true,
+			"min": 10,
+			"stepDown": 3,
+			"threshold": 10,
+			"penalty": 30
+		},
+		"banning": {
+			"enabled": true,
+			"time": 20,
+			"invalidPercent": 25,
+			"checkThreshold": 30
+		},
+		"slushMining": {
+			"enabled": false,
+			"weight": 300,
+			"blockTime": 60,
+			"lastBlockCheckRate": 1
          }
     },
 
-    "payments": {
-        "enabled": true,
-        "interval": 600,
-        "maxAddresses": 50,
-        "mixin": 3,
-        "priority": 0,
-        "transferFee": 50,
-        "dynamicTransferFee": true,
-        "minerPayFee" : true,
-        "minPayment": 10000,
-        "maxTransactionAmount": 100000000,
-        "denomination": 100
+	"payments": {
+		"enabled": true,
+		"interval": 600,
+		"maxAddresses": 100,
+		"mixin": 7,
+		"priority": 0,
+		"transferFee": 10000000000,
+		"dynamicTransferFee": true,
+		"minerPayFee": true,
+		"minPayment": 1000000000000,
+		"maxPayment": 10000000000000000000000000,
+		"maxTransactionAmount": 10000000000000000,
+		"denomination": 10000000000
     },
 
-    "blockUnlocker": {
-        "enabled": true,
-        "interval": 30,
-        "depth": 40,
-        "poolFee": 1,
-        "devDonation": 0.2,
-        "networkFee": 0.2,
-        "fixBlockHeightRPC": false
+	"blockUnlocker": {
+		"enabled": true,
+		"interval": 30,
+		"depth": 60,
+		"poolFee": 1,
+		"devDonation": 0.0,
+                "finderReward": 1,
+		"networkFee": 0.6
     },
 
     "api": {
@@ -148,24 +151,31 @@
         "sslKey": "./privkey.pem",
         "sslCA": "./chain.pem",
         "trustProxyIP": true
-    },
+	},
 
-    "daemon": {
-        "host": "127.0.0.1",
-        "port": 4242
-    },
+	"daemon": {
+		"host": "127.0.0.1",
+		"port": 19009,
+                "user": "",
+                "password": ""
 
-    "wallet": {
-        "host": "127.0.0.1",
-        "port": 4243
-    },
+	},
 
-    "redis": {
-        "host": "127.0.0.1",
-        "port": 6379,
-        "auth": null,
-        "db": 0,
-        "cleanupInterval": 15
+	"wallet": {
+		"host": "127.0.0.1",
+		"port": 19014,
+                "user": "",
+                "password": "",
+                "category": "wallet"
+
+	},
+
+	"redis": {
+		"host": "127.0.0.1",
+		"port": 6379,
+		"auth": null,
+		"db": 0,
+		"cleanupInterval": 15
     },
 
     "notifications": {
