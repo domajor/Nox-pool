@@ -154,7 +154,7 @@ sudo su - your-user
 Clone the repository and run `npm update` for all the dependencies to be installed:
 
 ```bash
-git clone https://github.com/ddomajor/Nox-pool.git Nox-pool
+git clone https://github.com/domajor/Nox-pool.git Nox-pool
 cd Nox-pool
 
 npm update
